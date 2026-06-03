@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { background-color: var(--color-surface); color: #e5e7eb; -webkit-font-smoothing: antialiased; }
+
+.prose-custom { max-width: 65ch; }
+.prose-custom h1, .prose-custom h2, .prose-custom h3 { color: #f3f4f6; }
+.prose-custom p { color: #d1d5db; }
+.prose-custom a { color: #60a5fa; text-decoration: none; }
+.prose-custom a:hover { text-decoration: underline; }
+.prose-custom code { color: #22d3ee; }
+.prose-custom pre { background-color: #111827; border: 1px solid #374151; border-radius: 0.5rem; padding: 1rem; overflow-x: auto; }
+.prose-custom blockquote { border-left: 3px solid #3b82f6; color: #9ca3af; }
+
+.card-hover { transition: all 0.3s ease; }
+.card-hover:hover { box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1); transform: translateY(-2px); }
