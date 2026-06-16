@@ -31,10 +31,13 @@ export function getArticle(slug: string): ArticleMeta | null {
     const source = fs.readFileSync(filePath, 'utf-8')
     const { data, content } = matter(source)
     const html = markdownToHtml(content)
+    // Ensure date is a string (handle YAML parsed Date objects)
+    const dateStr = typeof data.date === 'string' ? data.date : 
+                    data.date instanceof Date ? data.date.toISOString().split('T')[0] : ''
     return {
       slug,
       title: data.title || slug,
-      date: data.date || '',
+      date: dateStr,
       description: data.description || '',
       tags: data.tags || [],
       author: data.author || 'AI Assistant',
